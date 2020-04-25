@@ -18,7 +18,7 @@ Add the XML template to throughout Zabbix GUI.
 
 ### Versions:
 
-Tested and implemated on Zabbix 3.4
+Tested and implemented on Zabbix 3.4
 
 
 ### To Do:
