@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>4.0</version>
-    <date>2020-04-08T20:12:21Z</date>
+    <version>3.4</version>
+    <date>2020-04-25T18:41:14Z</date>
     <groups>
         <group>
-            <name>Templates App</name>
+            <name>Templates/Applications</name>
         </group>
     </groups>
     <templates>
         <template>
-            <template>Template Jitsi Videobridge</template>
-            <name>Template Jitsi Videobridge</name>
+            <template>Template App Jitsi Videobridge</template>
+            <name>Template App Jitsi Videobridge</name>
             <description>Jitsi Videobridge Stats. Based on Colibri stats bulit-in api to present Staticis from Jitsi Videobridge.&#13;
 &#13;
 Full Doc:&#13;
 https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</description>
             <groups>
                 <group>
-                    <name>Templates App</name>
+                    <name>Templates/Applications</name>
                 </group>
             </groups>
             <applications>
@@ -26,6 +26,54 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                 </application>
             </applications>
             <items>
+                <item>
+                    <name>Jitsi Videobridge audiochannels</name>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>jitsi.videobridge.audiochannels</key>
+                    <delay>0</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The current number of audio channels.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Jitsi</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>12</type>
+                            <params>$.audiochannels</params>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item>
+                        <key>web.page.get[localhost,/colibri/stats,8080]</key>
+                    </master_item>
+                </item>
                 <item>
                     <name>Jitsi Videobridge bit_rate_download</name>
                     <type>18</type>
@@ -54,7 +102,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>the total incoming and outgoing (respectively) bitrate for the video bridge in kilobits per second</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -74,24 +122,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -124,7 +154,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>the total incoming and outgoing (respectively) bitrate for the video bridge in kilobits per second</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -138,26 +168,12 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                             <type>12</type>
                             <params>$.bit_rate_upload</params>
                         </step>
+                        <step>
+                            <type>1</type>
+                            <params>1024</params>
+                        </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -190,7 +206,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The current number of conferences.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -206,24 +222,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -256,7 +254,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The distribution of conference sizes hosted on the bridge. It is an array of integers of size 15, and the value at (zero-based) index i is the number of conferences with i participants. The last element (index 14) also includes conferences with more than 14 participants.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -272,24 +270,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -338,24 +318,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -404,24 +366,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -470,24 +414,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -536,24 +462,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -602,24 +510,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -668,24 +558,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -734,24 +606,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -800,24 +654,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -866,24 +702,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -932,24 +750,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -998,24 +798,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1064,24 +846,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1130,24 +894,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1196,24 +942,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1262,24 +990,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1328,24 +1038,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1394,24 +1086,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1460,24 +1134,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1526,24 +1182,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1592,24 +1230,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1658,24 +1278,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1724,24 +1326,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1790,24 +1374,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1840,7 +1406,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>Experimental. An average value (in milliseconds) of the jitter calculated for incoming and outgoing streams. This hasn't been tested and it is currently not known whether the values are correct or not.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -1856,24 +1422,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1922,24 +1470,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -1972,7 +1502,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The fraction of lost incoming RTP packets. This is based on RTP sequence numbers and is relatively accurate.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -1988,24 +1518,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2038,7 +1550,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The fraction of lost outgoing RTP packets. This is based on incoming RTCP Receiver Reports, and an attempt to subtract the fraction of packets that were not sent (i.e. were lost before they reached the bridge). Further, this is averaged over all streams of all users as opposed to all packets, so it is not correctly weighted. This is not accurate, but may be a useful metric nonetheless.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -2054,24 +1566,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2120,24 +1614,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2170,7 +1646,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>the total incoming and outgoing (respectively) packet rate for the video bridge in packets per second.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -2186,24 +1662,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2252,24 +1710,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2318,24 +1758,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2384,24 +1806,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2434,7 +1838,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>Deprecated. The sum of loss_rate_download and loss_rate_upload.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -2450,24 +1854,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2500,7 +1886,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>An average value (in milliseconds) of the RTT across all streams.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -2516,24 +1902,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2566,7 +1934,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The number of Java threads that the video bridge is using.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -2582,24 +1950,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2652,24 +2002,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2722,27 +2054,111 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
+                </item>
+                <item>
+                    <name>Jitsi Videobridge total_colibri_web_socket_messages_received</name>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>jitsi.videobridge.total_colibri_web_socket_messages_received</key>
+                    <delay>0</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The total number messages received and sent through COLIBRI web sockets.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Jitsi</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>12</type>
+                            <params>$.total_colibri_web_socket_messages_received</params>
+                        </step>
+                        <step>
+                            <type>10</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item>
+                        <key>web.page.get[localhost,/colibri/stats,8080]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>Jitsi Videobridge total_colibri_web_socket_messages_sent</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>jitsi.videobridge.total_colibri_web_socket_messages_sent</key>
+                    <delay>30s</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The total number messages received and sent through COLIBRI web sockets.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Jitsi</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>12</type>
+                            <params>$.total_colibri_web_socket_messages_sent</params>
+                        </step>
+                        <step>
+                            <type>10</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Jitsi Videobridge total_conferences_completed</name>
@@ -2792,24 +2208,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2862,24 +2260,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2932,24 +2312,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -2982,7 +2344,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The total number messages received and sent through data channels.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -3002,24 +2364,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3052,7 +2396,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The total number messages received and sent through data channels.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -3072,24 +2416,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3142,24 +2468,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3192,7 +2500,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The total number of failed conferences on the bridge. A conference is marked as failed when all of its channels have failed. A channel is marked as failed if it had no payload activity.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -3212,24 +2520,58 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
+                    <master_item>
+                        <key>web.page.get[localhost,/colibri/stats,8080]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>Jitsi Videobridge total_loss_controlled_participant_seconds</name>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>jitsi.videobridge.total_loss_controlled_participant_seconds</key>
+                    <delay>0</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The total number of participant-seconds that are loss-controlled.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Jitsi</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>12</type>
+                            <params>$.total_loss_controlled_participant_seconds</params>
+                        </step>
+                        <step>
+                            <type>9</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3262,7 +2604,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The total number of participant-seconds that are loss-degraded.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -3282,24 +2624,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3332,7 +2656,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>The total number of participant-seconds that are loss-limited.</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -3352,24 +2676,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3422,24 +2728,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3492,24 +2780,58 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
+                    <master_item>
+                        <key>web.page.get[localhost,/colibri/stats,8080]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>Jitsi Videobridge total_partially_failed_conferences</name>
+                    <type>18</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>jitsi.videobridge.total_partially_failed_conferences</key>
+                    <delay>0</delay>
+                    <history>7d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>The total number of partially failed conferences on the bridge. A conference is marked as partially failed when some of its channels has failed. A channel is marked as failed if it had no payload activity.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Jitsi</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing>
+                        <step>
+                            <type>12</type>
+                            <params>$.total_partially_failed_conferences</params>
+                        </step>
+                        <step>
+                            <type>9</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <jmx_endpoint/>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3562,24 +2884,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3628,24 +2932,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
@@ -3694,27 +2980,50 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item>
                         <key>web.page.get[localhost,/colibri/stats,8080]</key>
                     </master_item>
+                </item>
+                <item>
+                    <name>Jitsi Videobridge port listen</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>net.udp.listen[10000]</key>
+                    <delay>1m</delay>
+                    <history>90d</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Jitsi</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
                 </item>
                 <item>
                     <name>Jitsi Videobridge Stats</name>
@@ -3761,24 +3070,6 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                         </step>
                     </preprocessing>
                     <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
                     <master_item/>
                 </item>
             </items>
@@ -3786,9 +3077,440 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
             <httptests/>
             <macros/>
             <templates/>
-            <screens/>
+            <screens>
+                <screen>
+                    <name>jitsi screen</name>
+                    <hsize>2</hsize>
+                    <vsize>10</vsize>
+                    <screen_items>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Bit Rate</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Channels</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Conferences and Participants</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Conference Sizes</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>2</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Loss Rate</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>2</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Packet Rate</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>3</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi RTP Loss</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>3</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi RTT</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>4</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Threads</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>4</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total Bytes per Second</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>5</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total Conferences per Minute</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>5</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total Conference Time in Minute</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>6</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total Data Messages per Second</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>6</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total Loss per Minute</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>7</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total Packets per Second</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>7</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total Speaker Changes per minute</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>8</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Jitter</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>8</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Jitsi Total colibri web socket</name>
+                                <host>Template App Jitsi Videobridge</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                    </screen_items>
+                </screen>
+            </screens>
         </template>
     </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template App Jitsi Videobridge:net.udp.listen[10000].max(#3)}=0 or&#13;
+{Template App Jitsi Videobridge:jitsi.videobridge.threads.last(#3)}&lt;2 or&#13;
+{Template App Jitsi Videobridge:jitsi.videobridge.threads.nodata(4m)}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Jitsi videobridge service is down on {HOST.NAME}</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>systemctl restart jitsi-v*&#13;
+netstat -lpnu|grep 100&#13;
+tail -f /var/log/jitsi/jvb.log</description>
+            <type>0</type>
+            <manual_close>1</manual_close>
+            <dependencies/>
+            <tags>
+                <tag>
+                    <tag>jitsi</tag>
+                    <value/>
+                </tag>
+            </tags>
+        </trigger>
+    </triggers>
     <graphs>
         <graph>
             <name>Jitsi Bit Rate</name>
@@ -3816,7 +3538,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.bit_rate_download</key>
                     </item>
                 </graph_item>
@@ -3828,7 +3550,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.bit_rate_upload</key>
                     </item>
                 </graph_item>
@@ -3860,7 +3582,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.videochannels</key>
                     </item>
                 </graph_item>
@@ -3872,8 +3594,20 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.videostreams</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>00CC00</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template App Jitsi Videobridge</host>
+                        <key>jitsi.videobridge.audiochannels</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -3904,7 +3638,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conferences</key>
                     </item>
                 </graph_item>
@@ -3916,7 +3650,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.participants</key>
                     </item>
                 </graph_item>
@@ -3928,7 +3662,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.p2p_conferences</key>
                     </item>
                 </graph_item>
@@ -3960,7 +3694,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_1</key>
                     </item>
                 </graph_item>
@@ -3972,7 +3706,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_2</key>
                     </item>
                 </graph_item>
@@ -3984,7 +3718,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_3</key>
                     </item>
                 </graph_item>
@@ -3996,7 +3730,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_4</key>
                     </item>
                 </graph_item>
@@ -4008,7 +3742,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_5</key>
                     </item>
                 </graph_item>
@@ -4020,7 +3754,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_6</key>
                     </item>
                 </graph_item>
@@ -4032,7 +3766,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_7</key>
                     </item>
                 </graph_item>
@@ -4044,7 +3778,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_8</key>
                     </item>
                 </graph_item>
@@ -4056,7 +3790,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_9</key>
                     </item>
                 </graph_item>
@@ -4068,7 +3802,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_10</key>
                     </item>
                 </graph_item>
@@ -4080,7 +3814,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_11</key>
                     </item>
                 </graph_item>
@@ -4092,7 +3826,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_12</key>
                     </item>
                 </graph_item>
@@ -4104,7 +3838,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_13</key>
                     </item>
                 </graph_item>
@@ -4116,7 +3850,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_14</key>
                     </item>
                 </graph_item>
@@ -4128,7 +3862,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_15</key>
                     </item>
                 </graph_item>
@@ -4140,7 +3874,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_16</key>
                     </item>
                 </graph_item>
@@ -4152,7 +3886,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_17</key>
                     </item>
                 </graph_item>
@@ -4164,7 +3898,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_18</key>
                     </item>
                 </graph_item>
@@ -4176,7 +3910,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_19</key>
                     </item>
                 </graph_item>
@@ -4188,7 +3922,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_20</key>
                     </item>
                 </graph_item>
@@ -4200,7 +3934,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.conference_size_21</key>
                     </item>
                 </graph_item>
@@ -4232,7 +3966,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.endpoints_sending_audio</key>
                     </item>
                 </graph_item>
@@ -4244,7 +3978,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.endpoints_sending_video</key>
                     </item>
                 </graph_item>
@@ -4256,7 +3990,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.inactive_endpoints</key>
                     </item>
                 </graph_item>
@@ -4268,7 +4002,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.receive_only_endpoints</key>
                     </item>
                 </graph_item>
@@ -4300,7 +4034,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.jitter_aggregate</key>
                     </item>
                 </graph_item>
@@ -4332,7 +4066,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.largest_conference</key>
                     </item>
                 </graph_item>
@@ -4364,7 +4098,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.loss_rate_download</key>
                     </item>
                 </graph_item>
@@ -4376,7 +4110,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.loss_rate_upload</key>
                     </item>
                 </graph_item>
@@ -4408,7 +4142,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.packet_rate_download</key>
                     </item>
                 </graph_item>
@@ -4420,7 +4154,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.packet_rate_upload</key>
                     </item>
                 </graph_item>
@@ -4452,7 +4186,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.rtp_loss</key>
                     </item>
                 </graph_item>
@@ -4484,7 +4218,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.rtt_aggregate</key>
                     </item>
                 </graph_item>
@@ -4516,7 +4250,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.threads</key>
                     </item>
                 </graph_item>
@@ -4548,7 +4282,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_bytes_received</key>
                     </item>
                 </graph_item>
@@ -4560,8 +4294,52 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_bytes_sent</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Jitsi Total colibri web socket</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>1A7C11</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template App Jitsi Videobridge</host>
+                        <key>jitsi.videobridge.total_colibri_web_socket_messages_received</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>F63100</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template App Jitsi Videobridge</host>
+                        <key>jitsi.videobridge.total_colibri_web_socket_messages_sent</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -4592,7 +4370,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_conferences_completed</key>
                     </item>
                 </graph_item>
@@ -4604,7 +4382,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_conferences_created</key>
                     </item>
                 </graph_item>
@@ -4616,7 +4394,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_participants</key>
                     </item>
                 </graph_item>
@@ -4628,8 +4406,20 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_failed_conferences</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>FC6EA3</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template App Jitsi Videobridge</host>
+                        <key>jitsi.videobridge.total_partially_failed_conferences</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -4660,7 +4450,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_conference_seconds</key>
                     </item>
                 </graph_item>
@@ -4692,7 +4482,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_data_channel_messages_received</key>
                     </item>
                 </graph_item>
@@ -4704,7 +4494,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_data_channel_messages_sent</key>
                     </item>
                 </graph_item>
@@ -4736,7 +4526,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_loss_degraded_participant_seconds</key>
                     </item>
                 </graph_item>
@@ -4748,8 +4538,20 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_loss_limited_participant_seconds</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>2774A4</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template App Jitsi Videobridge</host>
+                        <key>jitsi.videobridge.total_loss_controlled_participant_seconds</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -4780,7 +4582,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_packets_received</key>
                     </item>
                 </graph_item>
@@ -4792,7 +4594,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_packets_sent</key>
                     </item>
                 </graph_item>
@@ -4824,7 +4626,7 @@ https://github.com/jitsi/jitsi-videobridge/blob/master/doc/statistics.md</descri
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template Jitsi Videobridge</host>
+                        <host>Template App Jitsi Videobridge</host>
                         <key>jitsi.videobridge.total_dominant_speaker_changes</key>
                     </item>
                 </graph_item>
