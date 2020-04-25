@@ -17,10 +17,9 @@ Add the XML template to throughout Zabbix GUI.
 
 ### Versions:
 
-Tested and implemated on Zabbix 4.2, but depending on Simple (based on libcurl and LDD) it should works on older Versions(tfirst zabbix version which where included JSONPAth). If will be any problem, please give me feedback.
+Tested and implemated on Zabbix 3.4
 
 
 ### To Do:
 
-* Release previous version 1.0
-* Configure triggers.
+* Rewrite items to use with MACRO
